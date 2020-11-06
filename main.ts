@@ -327,6 +327,11 @@ tiles.placeOnTile(character, tiles.getTileLocation(4, 10))
 statusbar = statusbars.create(20, 2, StatusBarKind.Health)
 statusbar.attachToSprite(character)
 game.onUpdate(function () {
+    if (info.score() >= 1000) {
+        game.over(true)
+    }
+})
+game.onUpdate(function () {
     if (burgerlife == 20) {
         burger.destroy()
     }
